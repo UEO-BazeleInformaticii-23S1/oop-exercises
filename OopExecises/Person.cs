@@ -8,9 +8,36 @@ namespace OopExecises
 {
     internal class Person
     {
-        public string LastName { get; set; }
+        public Person(
+            string lastName,
+            string firstName,
+            DateTime dateOfBirth,
+            Address address) 
+        {
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                throw new ArgumentNullException(nameof(lastName));
+            }
 
-        public string FirstName { get; set; }
+            if (string.IsNullOrWhiteSpace(firstName))
+            {
+                throw new ArgumentNullException(nameof(firstName));
+            }
+
+            if (address is null)
+            {
+                throw new ArgumentNullException(nameof(address));
+            }
+
+            LastName = lastName;
+            FirstName = firstName;
+            DateOfBirth = dateOfBirth;  
+            Address = address;
+        }
+
+        public string LastName { get; private set; }
+
+        public string FirstName { get; private set; }
 
         public DateTime DateOfBirth { get; }
 
@@ -22,6 +49,6 @@ namespace OopExecises
             } 
         }
 
-        public Address Address { get; set; }
+        public Address Address { get; private set; }
     }
 }
