@@ -50,5 +50,11 @@ namespace OopExecises
         }
 
         public Address Address { get; private set; }
+
+        public void Print()
+        {
+            Console.WriteLine($"{LastName} {FirstName}, date of birth: {DateOfBirth:yyyy-MM-dd}, age: {Age}");
+            Console.WriteLine($"Address: {Address.StreetName} {Address.StreetNumber}, {Address.City}, {Address.County}, {Address.Country}");
+        }
     }
 }
