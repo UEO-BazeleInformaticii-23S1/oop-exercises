@@ -10,7 +10,8 @@
                 new DateTime(1990, 12, 4),
                 new Address("Romania", "Bihor", "Oradea", "Nufarului", "58"));
 
-            p.Print();
+            PersonConsolePrinter.Print(p);
+            // p.Print();
         }
     }
 }
